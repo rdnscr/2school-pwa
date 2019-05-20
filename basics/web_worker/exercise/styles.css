@@ -1,0 +1,17 @@
+body {
+    background-color: #FDCD20;
+}
+
+.logo {    
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.logo img {
+    height: 30px;
+}
+
+h1 {
+    margin-top: 40px;
+}
