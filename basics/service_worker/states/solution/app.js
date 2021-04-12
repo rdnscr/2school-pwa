@@ -16,7 +16,8 @@ if ('serviceWorker' in navigator) {
 
       // update handling in case a new version of the service worker is available
       registration.addEventListener('updatefound', () => {
-        // An updated service worker has appeared in registration.installing!
+        // An updated service worker has appeared in registration!
+        // If you debug this, installing will be null since then the new service worker is already installed under waiting --> in that case the code will fail
         newWorker = registration.installing;
 
         // If the new service worker is already waiting. It means it was already successfully installed upon this point
@@ -47,6 +48,7 @@ if ('serviceWorker' in navigator) {
 // In case the reload button is pressed, activate the new service worker
 document.getElementById('notification').addEventListener('click', function() {
   newWorker.postMessage({ action: 'skipWaiting' });
+  document.getElementById('notification').className = '';
 });
 
 function showNotification() {

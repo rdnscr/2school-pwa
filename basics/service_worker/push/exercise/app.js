@@ -50,6 +50,7 @@ if ('serviceWorker' in navigator) {
 // In case the reload button is pressed, activate the new service worker
 document.getElementById('notification').addEventListener('click', function() {
   newWorker.postMessage({ action: 'skipWaiting' });
+  document.getElementById('notification').className = '';
 });
 
 function showNotification() {
