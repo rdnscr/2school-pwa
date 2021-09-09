@@ -38,7 +38,7 @@ if ('serviceWorker' in navigator) {
         }
       });
 
-      pushManager.getSubscription().then(function(subscription) {
+      registration.pushManager.getSubscription().then(function(subscription) {
         isSubscribed = !(subscription === null);
 
         if (isSubscribed) {
@@ -47,7 +47,7 @@ if ('serviceWorker' in navigator) {
           const applicationServerKey = urlB64ToUint8Array(
             'BPDGTe1uJvBihLnkSj3g1PlEP1EFwXoRBRDUpY7Lrvw4pAsFGgsrRN4QTaCyYwdNv9FMXpDEwjEMmj1lgVR6hPU'
           );
-          swRegistration.pushManager.subscribe({
+          registration.pushManager.subscribe({
             userVisibleOnly: true,
             applicationServerKey: applicationServerKey
           });
